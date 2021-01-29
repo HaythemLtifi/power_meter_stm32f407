@@ -1,0 +1,106 @@
+[
+    {
+        "id": "21ecec6a.45bc64",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "bebc3b53.c729a8",
+        "type": "ui_text",
+        "z": "21ecec6a.45bc64",
+        "group": "dad0d1aa.3b3fa",
+        "order": 0,
+        "width": "3",
+        "height": "1",
+        "name": "",
+        "label": "POWER ",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 520,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "57312a11.17d29c",
+        "type": "serial in",
+        "z": "21ecec6a.45bc64",
+        "name": "STMSerial",
+        "serial": "af6cdc0c.c34a28",
+        "x": 320,
+        "y": 220,
+        "wires": [
+            [
+                "bebc3b53.c729a8",
+                "349313f4.cf714c"
+            ]
+        ]
+    },
+    {
+        "id": "349313f4.cf714c",
+        "type": "ui_gauge",
+        "z": "21ecec6a.45bc64",
+        "name": "",
+        "group": "dad0d1aa.3b3fa",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1150",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 510,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "dad0d1aa.3b3fa",
+        "type": "ui_group",
+        "z": "",
+        "name": " Power Meter",
+        "tab": "d47adc93.d9c6d",
+        "order": 1,
+        "disp": true,
+        "width": "3",
+        "collapse": false
+    },
+    {
+        "id": "af6cdc0c.c34a28",
+        "type": "serial-port",
+        "z": "",
+        "serialport": "COM7",
+        "serialbaud": "115200",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "d47adc93.d9c6d",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
